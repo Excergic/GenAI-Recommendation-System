@@ -1,0 +1,43 @@
+app:
+  title: "GenAI Recommendation System"
+  description: "AI-powered recommendation system for interior design and fashion"
+  icon: "🎨"
+
+models:
+  object_detection:
+    model_path: "yolov8x.pt"
+    confidence_threshold: 0.5
+
+  llm:
+    default_model: "gemma2:2b"
+    available_models:
+      - "gemma2:2b"
+      - "mistral"
+      - "llama2"
+      - "neural-chat"
+    api_url: "http://localhost:11434/api/generate"
+
+  image_generation:
+    model_id: "stabilityai/stable-diffusion-xl-base-1.0"
+    steps: 50
+    guidance_scale: 7.5
+
+categories:
+  - id: "study_desk"
+    name: "Study Desk"
+    description: "Optimize your study space"
+
+  - id: "interior"
+    name: "Interior Design"
+    description: "Transform your living space"
+
+  - id: "fashion"
+    name: "Fashion"
+    description: "Style recommendations"
+
+upload:
+  allowed_types:
+    - "jpg"
+    - "jpeg"
+    - "png"
+  max_size_mb: 5
